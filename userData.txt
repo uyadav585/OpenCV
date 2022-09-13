@@ -1,0 +1,16 @@
+#!/bin/bash
+sudo su root
+apt update
+apt install git -y
+apt install python3-pip -y
+pip3 install flask
+pip3 install opencv-python
+apt install libgl1-mesa-glx -y
+mkdir /home/ubuntu/app
+sleep 2m
+mkfs -t ext4 /dev/xvdf
+mount /dev/xvdf /home/ubuntu/app
+mkdir /home/ubuntu/app/LiveStream
+git clone https://github.com/rahul-yadav-hub/LiveStreamServer.git /home/ubuntu/app/LiveStream
+export FLASK_APP=/home/ubuntu/app/LiveStream/app.py
+flask run -h 0.0.0.0 -p 5000
