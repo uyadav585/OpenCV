@@ -5,6 +5,8 @@ import time
 
 from numpy import intp
 
+
+# test
 def aws():
     sg='aws ec2 create-security-group --group-name TeamZero --description "Give Description" --vpc-id vpc-595f9832 --profile umang'
     rule1='aws ec2 authorize-security-group-ingress --group-name TeamZero --protocol tcp --port 22 --cidr 0.0.0.0/0 --profile umang'
